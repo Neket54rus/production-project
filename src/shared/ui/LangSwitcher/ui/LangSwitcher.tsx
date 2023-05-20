@@ -1,23 +1,23 @@
-import {FC} from "react";
-import {useTranslation} from "react-i18next";
+import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import {classNames} from "shared/lib/classNames/classNames";
-import {Button, ThemeButton} from "shared/ui/Button";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ThemeButton } from 'shared/ui/Button';
 
-import cls from './LangSwitcher.module.scss'
+import cls from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
-    className?: string
+  className?: string
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
-    const {className} = props
+    const { className } = props;
 
-    const {t, i18n} = useTranslation()
-    const language = i18n.language === 'ru' ? 'en' : 'ru'
+    const { t, i18n } = useTranslation();
+    const language = i18n.language === 'ru' ? 'en' : 'ru';
     const translate = () => {
-        i18n.changeLanguage(language)
-    }
+        i18n.changeLanguage(language);
+    };
 
     return (
         <Button
@@ -27,5 +27,5 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
         >
             {t('Язык')}
         </Button>
-    )
-}
+    );
+};
