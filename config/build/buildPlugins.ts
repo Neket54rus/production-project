@@ -5,7 +5,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { type BuildOptions } from './types/config';
 
-export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] => [
+export const buildPlugins = (
+    { paths, isDev }: BuildOptions,
+): webpack.WebpackPluginInstance[] => [
     new HTMLWebpackPlugin({
         template: paths.html,
     }),
@@ -18,5 +20,5 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         __IS_DEV__: JSON.stringify(isDev),
     }),
     isDev && new webpack.HotModuleReplacementPlugin(),
-    isDev && new ReactRefreshPlugin(),
+    isDev && new ReactRefreshPlugin({ overlay: false }),
 ];

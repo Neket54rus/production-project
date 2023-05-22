@@ -1,6 +1,7 @@
 {
   "Язык": "English",
-  "Загрузка": "Loading",
   "Главная": "Main",
-  "О сайте": "About"
+  "О сайте": "About",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Reload page"
 }
