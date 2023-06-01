@@ -1,9 +1,9 @@
 name: linting, testing, building
 on:
   push:
-    brunches: [ new-api ]
+    brunches: [ master ]
   pull_request:
-    brunches: [ new-api ]
+    brunches: [ master ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
