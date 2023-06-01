@@ -22,7 +22,7 @@ export const buildPlugins = (
     }),
     isDev && new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshPlugin({ overlay: false }),
-    new BundleAnalyzerPlugin({
+    isDev && new BundleAnalyzerPlugin({
         openAnalyzer: false,
     }),
 ];
