@@ -2,6 +2,7 @@ import type webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { type BuildOptions } from './types/config';
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     const fileLoader = {
@@ -18,25 +19,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
         use: ['@svgr/webpack'],
     };
 
-    const sassLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        auto: (resPath: string) => resPath.includes('.module.'),
-                        localIdentName:
-                            options.isDev
-                                ? '[path][name]__[local]--[hash:base64:5]'
-                                : '[hash:base64:8]',
-                    },
-                },
-            },
-            'sass-loader',
-        ],
-    };
+    const sassLoader = buildCssLoader(options.isDev);
 
     const typescriptLoader = {
         test: /\.tsx?$/,
