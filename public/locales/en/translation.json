@@ -4,5 +4,8 @@
   "О сайте": "About",
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Reload page",
-  "Коротный язык": "En"
+  "Коротный язык": "En",
+  "Войти": "Join",
+  "Введите имя": "Enter your name",
+  "Введите пароль": "Enter password"
 }
