@@ -14,7 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof Spinner> = (
     args,
-) => <Spinner {...args} />;
+) => <Spinner />;
 
 export const Light = Template.bind({});
 Light.args = {};
