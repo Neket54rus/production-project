@@ -10,13 +10,13 @@ interface NotFoundPageProps {
 }
 
 export const NotFoundPage: FC<NotFoundPageProps> = (props) => {
-    const { className } = props;
+	const { className } = props;
 
-    const { t } = useTranslation('notFound');
+	const { t } = useTranslation('notFound');
 
-    return (
-        <div className={classNames(cls.NotFoundPage, {}, [className])}>
-            {t('Страница не найдена')}
-        </div>
-    );
+	return (
+		<div className={classNames(cls.NotFoundPage, {}, [className])}>
+			{t('Страница не найдена')}
+		</div>
+	);
 };

@@ -1,19 +1,19 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import {
-    ThemeDecorator,
+	ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Spinner } from './Spinner';
 
 export default {
-    title: 'shared/Spinner',
-    component: Spinner,
-    argTypes: {},
+	title: 'shared/Spinner',
+	component: Spinner,
+	argTypes: {},
 } as ComponentMeta<typeof Spinner>;
 
 const Template: ComponentStory<typeof Spinner> = (
-    args,
+	args,
 ) => <Spinner />;
 
 export const Light = Template.bind({});

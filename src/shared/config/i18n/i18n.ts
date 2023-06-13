@@ -4,16 +4,16 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 i18n
-    .use(Backend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-        fallbackLng: 'ru',
-        lng: 'ru',
-        debug: __IS_DEV__,
-        interpolation: {
-            escapeValue: false,
-        },
-    });
+	.use(Backend)
+	.use(LanguageDetector)
+	.use(initReactI18next)
+	.init({
+		fallbackLng: 'ru',
+		lng: 'ru',
+		debug: __IS_DEV__,
+		interpolation: {
+			escapeValue: false,
+		},
+	});
 
 export default i18n;

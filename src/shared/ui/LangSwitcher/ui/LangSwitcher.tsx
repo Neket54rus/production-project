@@ -12,26 +12,26 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
-    const { className, short } = props;
+	const { className, short } = props;
 
-    const { t, i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 
-    const language = i18n.language === 'ru' ? 'en' : 'ru';
-    const translate = () => {
-        i18n.changeLanguage(language);
-    };
+	const language = i18n.language === 'ru' ? 'en' : 'ru';
+	const translate = () => {
+		i18n.changeLanguage(language);
+	};
 
-    return (
-        <Button
-            className={classNames(
-                cls.LangSwitcher,
-                { [cls.short]: short },
-                [className],
-            )}
-            theme={ButtonTheme.CLEAR}
-            onClick={translate}
-        >
-            {t(short ? 'Коротный язык' : 'Язык')}
-        </Button>
-    );
+	return (
+		<Button
+			className={classNames(
+				cls.LangSwitcher,
+				{ [cls.short]: short },
+				[className],
+			)}
+			theme={ButtonTheme.CLEAR}
+			onClick={translate}
+		>
+			{t(short ? 'Коротный язык' : 'Язык')}
+		</Button>
+	);
 };

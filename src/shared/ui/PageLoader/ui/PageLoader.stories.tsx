@@ -1,19 +1,19 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import {
-    ThemeDecorator,
+	ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { PageLoader } from './PageLoader';
 
 export default {
-    title: 'shared/PageLoader',
-    component: PageLoader,
-    argTypes: {},
+	title: 'shared/PageLoader',
+	component: PageLoader,
+	argTypes: {},
 } as ComponentMeta<typeof PageLoader>;
 
 const Template: ComponentStory<typeof PageLoader> = (
-    args,
+	args,
 ) => <PageLoader {...args} />;
 
 export const Light = Template.bind({});
