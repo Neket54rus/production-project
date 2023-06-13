@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
 
 import { counterReducer } from 'entities/Counter';
@@ -29,3 +30,5 @@ export const createReduxStore = (
 
 	return store;
 };
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

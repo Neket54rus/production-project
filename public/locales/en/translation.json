@@ -1,14 +1,15 @@
 {
-  "Язык": "English",
-  "Главная": "Main",
-  "О сайте": "About",
-  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
-  "Обновить страницу": "Reload page",
-  "Коротный язык": "En",
-  "Войти": "Join",
-  "Введите имя": "Enter your name",
-  "Введите пароль": "Enter password",
-  "Форма авторизации": "Authorization form",
-  "Не верные данные": "You entered an incorrect username or password",
-  "Выйти": "Out"
+	"Язык": "English",
+	"Главная": "Main",
+	"О сайте": "About",
+	"Профиль": "Profile",
+	"Произошла непредвиденная ошибка": "An unexpected error has occurred",
+	"Обновить страницу": "Reload page",
+	"Коротный язык": "En",
+	"Войти": "Join",
+	"Введите имя": "Enter your name",
+	"Введите пароль": "Enter password",
+	"Форма авторизации": "Authorization form",
+	"Не верные данные": "You entered an incorrect username or password",
+	"Выйти": "Out"
 }

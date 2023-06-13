@@ -1,15 +1,15 @@
-import { type FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import {
+	useState, useMemo, memo,
+} from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { ButtonSize } from 'shared/ui/Button/ui/Button';
-import { AppLink } from 'shared/ui/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import AboutIcon from 'shared/assets/icons/about-icon.svg';
-import MainIcon from 'shared/assets/icons/main-icon.svg';
+
+import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { SidebarItemsList } from '../../model/items';
 
 import cls from './Sidebar.module.scss';
 
@@ -17,16 +17,20 @@ interface SidebarProps {
 	className?: string
 }
 
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar = memo((props: SidebarProps) => {
 	const { className } = props;
 
 	const [collapsed, setCollapsed] = useState(false);
 
-	const { t } = useTranslation();
-
 	const onToggle = () => {
 		setCollapsed((prev) => !prev);
 	};
+
+	const itemsList = useMemo(() => (
+		SidebarItemsList.map((item) => (
+			<SidebarItem key={item.path} item={item} collapsed={collapsed} />
+		))
+	), [collapsed]);
 
 	return (
 		<div
@@ -49,18 +53,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 				{collapsed ? '>' : '<'}
 			</Button>
 			<div className={cls.items}>
-				<AppLink to={RoutePath.main} className={cls.item}>
-					<MainIcon className={cls.icon} />
-					<span className={cls.link}>
-						{t('Главная')}
-					</span>
-				</AppLink>
-				<AppLink to={RoutePath.about} className={cls.item}>
-					<AboutIcon className={cls.icon} />
-					<span className={cls.link}>
-						{t('О сайте')}
-					</span>
-				</AppLink>
+				{itemsList}
 			</div>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
@@ -68,4 +61,4 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 			</div>
 		</div>
 	);
-};
+});

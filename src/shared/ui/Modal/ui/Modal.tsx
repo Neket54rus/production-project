@@ -31,7 +31,6 @@ export const Modal: FC<ModalProps> = (props) => {
 	const [isMounted, setMounted] = useState(false);
 
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
-	const { theme } = useTheme();
 
 	const closeHandler = useCallback(() => {
 		if (onClose) {

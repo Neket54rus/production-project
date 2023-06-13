@@ -1,13 +1,14 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
@@ -19,6 +20,7 @@ import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string
+	onSuccess?: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -28,9 +30,10 @@ const initialReducers: ReducersList = {
 const LoginForm = memo((props: LoginFormProps) => {
 	const {
 		className,
+		onSuccess,
 	} = props;
 
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const { t } = useTranslation();
 	const username = useSelector(getLoginUsername);
 	const password = useSelector(getLoginPassword);
@@ -45,9 +48,13 @@ const LoginForm = memo((props: LoginFormProps) => {
 		dispatch(loginActions.setPassword(value));
 	}, [dispatch]);
 
-	const onLoginClick = useCallback(() => {
-		dispatch(loginByUsername({ username, password }));
-	}, [dispatch, password, username]);
+	const onLoginClick = useCallback(async () => {
+		const result = await dispatch(loginByUsername({ username, password }));
+
+		if (result.meta.requestStatus === 'rejected') {
+			onSuccess();
+		}
+	}, [dispatch, password, username, onSuccess]);
 
 	return (
 		<DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
