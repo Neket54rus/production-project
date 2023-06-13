@@ -29,7 +29,7 @@ WithError.decorators = [StoreDecorator({
 	loginForm: {
 		username: '123',
 		password: '123',
-		error: 'fail',
+		error: 'error',
 	},
 })];
 

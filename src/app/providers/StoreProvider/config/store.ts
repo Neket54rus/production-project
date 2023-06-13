@@ -8,8 +8,10 @@ import { createReducerManager } from './reducerManager';
 
 export const createReduxStore = (
 	initialState?: StateSchema,
+	asyncReducers?: ReducersMapObject<StateSchema>,
 ) => {
 	const rootReducer: ReducersMapObject<StateSchema> = {
+		...asyncReducers,
 		counter: counterReducer,
 		user: userReducer,
 	};

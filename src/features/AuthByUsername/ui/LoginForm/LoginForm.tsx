@@ -1,7 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import i18n from 'i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -59,7 +58,7 @@ const LoginForm = memo((props: LoginFormProps) => {
 			)}
 			>
 				<Text title={t('Форма авторизации')} />
-				{error && <Text text={i18n.t('Не верные данные')} theme={TextTheme.ERROR} />}
+				{error && <Text text={t('Не верные данные')} theme={TextTheme.ERROR} />}
 				<Input
 					className={cls.input}
 					placeholder={t('Введите имя')}
