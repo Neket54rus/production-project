@@ -58,9 +58,11 @@ module.exports = {
 		'no-param-reassign': 'off',
 		'react/jsx-indent': ['error', 'tab'],
 		'react/jsx-indent-props': ['error', 'tab'],
+		'no-undef': 'off',
 	},
 	globals: {
 		__IS_DEV__: true,
+		__API__: true,
 	},
 	overrides: [
 		{

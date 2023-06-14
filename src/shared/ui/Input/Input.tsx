@@ -30,7 +30,7 @@ export const Input = memo((props: InputProps) => {
 	const [isFocused, setFocused] = useState(false);
 	const [caretPosition, setCaretPosition] = useState(0);
 
-	const ref = useRef<HTMLInputElement>();
+	const ref = useRef<HTMLInputElement>(null);
 
 	const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		onChange?.(event.target.value);
@@ -70,6 +70,7 @@ export const Input = memo((props: InputProps) => {
 			)}
 			<div className={cls.caretWrapper}>
 				<input
+					ref={ref}
 					type={type}
 					value={value}
 					onChange={onChangeHandler}
@@ -77,7 +78,6 @@ export const Input = memo((props: InputProps) => {
 					onBlur={onBlur}
 					onFocus={onFocus}
 					onSelect={onSelect}
-					ref={ref}
 					{...otherProps}
 				/>
 				{isFocused
