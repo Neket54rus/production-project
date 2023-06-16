@@ -28,7 +28,9 @@ export const buildPlugins = ({
 	if (isDev) {
 		plugins.push(
 			new webpack.HotModuleReplacementPlugin(),
-			new ReactRefreshPlugin({ overlay: false }),
+			new ReactRefreshPlugin({
+				overlay: false,
+			}),
 			new BundleAnalyzerPlugin({
 				openAnalyzer: false,
 			}),
