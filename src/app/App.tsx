@@ -7,6 +7,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
+// TODO:
+// 1. Create fetchArticleById.test
+// 2. Create articleDetailsslice.test
+
 function App() {
 	const dispatch = useDispatch();
 	const inited = useSelector(getUserInited);

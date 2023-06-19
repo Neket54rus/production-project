@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-	title: '/ArticlesPage',
+	title: 'pages/ArticlesPage',
 	component: ArticlesPage,
 	argTypes: {},
 	args: {},
