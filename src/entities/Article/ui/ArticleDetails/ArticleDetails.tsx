@@ -14,6 +14,7 @@ import EyeIcon from 'shared/assets/icons/eye-icon.svg';
 import DateIcon from 'shared/assets/icons/date-icon.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
 	getArticleDetailsData,
 	getArticleDetailsError,
@@ -62,11 +63,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 		}
 	}, []);
 
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			dispatch(fetchArticleById(id));
-		}
-	}, [dispatch, id]);
+	useInitialEffect(() => {
+		dispatch(fetchArticleById(id));
+	});
 
 	let content;
 
