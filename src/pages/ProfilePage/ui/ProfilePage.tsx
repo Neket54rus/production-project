@@ -94,7 +94,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 	if (!id) {
 		return (
 			<div className={classNames('', {}, [className])}>
-				ID not found!
+				{t('ID не найден')}
 			</div>
 		);
 	}

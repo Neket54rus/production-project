@@ -10,5 +10,7 @@
 	"Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
 	"Попробуйте обновить страницу": "Try refreshing the page",
 	"Отменить": "Cancel",
-	"Сохранить": "Save"
+	"Сохранить": "Save",
+	"ID не найден": "ID not found",
+	"Укажите валюту": "Select currency",
 }
