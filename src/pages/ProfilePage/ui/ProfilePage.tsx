@@ -21,6 +21,8 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -36,6 +38,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 
 	const { t } = useTranslation();
 	const dispatch = useAppDispatch();
+	const { id } = useParams<{ id: string }>();
 	const formData = useSelector(getProfileForm);
 	const isLoading = useSelector(getProfileIsLoading);
 	const error = useSelector(getProfileError);
@@ -82,11 +85,19 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 		dispatch(profileActions.updateProfile({ country }));
 	}, [dispatch]);
 
-	useEffect(() => {
-		if (__PROJECT__ !== 'storybook') {
-			dispatch(fetchProfileData());
+	useInitialEffect(() => {
+		if (id) {
+			dispatch(fetchProfileData(id));
 		}
-	}, [dispatch]);
+	});
+
+	if (!id) {
+		return (
+			<div className={classNames('', {}, [className])}>
+				ID not found!
+			</div>
+		);
+	}
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
