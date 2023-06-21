@@ -59,6 +59,7 @@ module.exports = {
 		'react/jsx-indent': ['error', 'tab'],
 		'react/jsx-indent-props': ['error', 'tab'],
 		'no-undef': 'off',
+		'react/no-array-index-key': 'off',
 	},
 	globals: {
 		__IS_DEV__: true,
