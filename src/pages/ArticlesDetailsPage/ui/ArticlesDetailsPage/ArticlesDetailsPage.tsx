@@ -17,6 +17,7 @@ import {
 	addCommentForArticle,
 } from 'pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 
+import { Page } from 'shared/ui/Page/Page';
 import {
 	fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -57,15 +58,15 @@ const ArticlesDetailsPage = (props: ArticlesDetailsPageProps) => {
 
 	if (!id) {
 		return (
-			<div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
 				{t('Id not found!')}
-			</div>
+			</Page>
 		);
 	}
 
 	return (
 		<DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-			<div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+			<Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
 				<Button onClick={onBackToList}>
 					{t('Назад к списку')}
 				</Button>
@@ -73,7 +74,7 @@ const ArticlesDetailsPage = (props: ArticlesDetailsPageProps) => {
 				<Text className={cls.commentTitle} title={t('Комментарии')} />
 				<AddCommentForm onSendComment={onSendComment} />
 				<CommentList comments={comments} isLoading={isLoading} />
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	);
 };
