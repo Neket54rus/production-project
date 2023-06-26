@@ -1,27 +1,27 @@
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Button } from 'shared/ui/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
 import {
-	addCommentForArticle,
+    addCommentForArticle,
 } from 'pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Button } from 'shared/ui/Button';
+import { Text } from 'shared/ui/Text/Text';
 
-import { Page } from 'shared/ui/Page/Page';
-import {
-	fetchCommentsByArticleId,
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { Page } from 'widgets/Page/Page';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import {
+    fetchCommentsByArticleId,
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer, getArticleCommemments } from '../../model/slice/articleDetailsCommentsSlice';
 
 import cls from './ArticlesDetailsPage.module.scss';
