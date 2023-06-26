@@ -11,5 +11,13 @@
 	"Введите пароль": "Enter password",
 	"Форма авторизации": "Authorization form",
 	"Не верные данные": "You entered an incorrect username or password",
-	"Выйти": "Out"
+	"Выйти": "Out",
+	"Сортировать ПО": "Sort BY",
+	"Поиск": "Search",
+	"по": "by",
+	"возрастанию": "ascending",
+	"убыванию": "descending",
+	"дате создания": "creation date",
+	"названию": "title",
+	"просмотрам": "views"
 }
