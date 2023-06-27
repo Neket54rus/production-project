@@ -4,16 +4,16 @@ import { useSelector } from 'react-redux';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import {
-    ProfileCard,
-    ValidateProfileError,
-    fetchProfileData,
-    getProfileError,
-    getProfileForm,
-    getProfileIsLoading,
-    getProfileReadonly,
-    getProfileValidateErrors,
-    profileActions,
-    profileReducer,
+	ProfileCard,
+	ValidateProfileError,
+	fetchProfileData,
+	getProfileError,
+	getProfileForm,
+	getProfileIsLoading,
+	getProfileReadonly,
+	getProfileValidateErrors,
+	profileActions,
+	profileReducer,
 } from 'entities/Profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';

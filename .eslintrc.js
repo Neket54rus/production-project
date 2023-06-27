@@ -1,39 +1,16 @@
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-		jest: true,
-	},
-	extends: [
-		'plugin:react/recommended',
-		'airbnb',
-		'plugin:i18next/recommended',
-	],
+	env: { browser: true, es2021: true, jest: true },
+	extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
 	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		ecmaFeatures: {
-			jsx: true,
-		},
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-	},
-	plugins: [
-		'react',
-		'@typescript-eslint',
-		'i18next',
-		'react-hooks',
-	],
+	parserOptions: { ecmaFeatures: { jsx: true }, ecmaVersion: 'latest', sourceType: 'module' },
+	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
 	rules: {
 		indent: ['error', 'tab'],
 		'linebreak-style': 'off',
 		'no-tabs': 'off',
-		'react/jsx-filename-extension': [
-			2,
-			{ extensions: ['.js', '.jsx', 'tsx'] },
-		],
+		'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', 'tsx'] }],
 		'import/no-unresolved': 'off',
 		'import/prefer-default-export': 'off',
-		'no-unused-vars': 'warn',
 		'react/require-default-props': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-props-no-spreading': 'warn',
@@ -44,10 +21,7 @@ module.exports = {
 		'import/no-extraneous-dependencies': 'off',
 		'i18next/no-literal-string': [
 			'error',
-			{
-				markupOnly: true,
-				ignoreAttribute: ['data-testid', 'to', 'name'],
-			},
+			{ markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name', 'target'] },
 		],
 		'max-len': ['error', { code: 120, ignoreComments: true }],
 		'no-restricted-globals': 'off',
@@ -60,6 +34,10 @@ module.exports = {
 		'react/jsx-indent-props': ['error', 'tab'],
 		'no-undef': 'off',
 		'react/no-array-index-key': 'off',
+		'arrow-body-style': 'off',
+		'object-curly-newline': 'off',
+		'no-unused-vars': 'off',
+		'@typescript-eslint/no-unused-vars': ['warn'],
 	},
 	globals: {
 		__IS_DEV__: true,
