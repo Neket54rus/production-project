@@ -1,12 +1,11 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
 	DynamicModuleLoader,
@@ -14,7 +13,6 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Button } from 'shared/ui/Button';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Page } from 'widgets/Page/Page';
 
@@ -28,6 +26,7 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { articleDetailsPageReducer } from '../../model/slice';
 import { getArticleCommemments } from '../../model/slice/articleDetailsCommentsSlice';
 import { getArticleRecommendations } from '../../model/slice/articleDetailsPageRecommendationsSlice';
+import { ArticlesDetailsPageHeader } from '../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
 
 import cls from './ArticlesDetailsPage.module.scss';
 
@@ -45,7 +44,6 @@ const ArticlesDetailsPage = (props: ArticlesDetailsPageProps) => {
 	const { id } = useParams<{ id: string }>();
 	const { t } = useTranslation('articles-details');
 	const dispatch = useAppDispatch();
-	const navigate = useNavigate();
 
 	const comments = useSelector(getArticleCommemments.selectAll);
 	const isLoading = useSelector(getArticleCommentsIsLoading);
@@ -64,10 +62,6 @@ const ArticlesDetailsPage = (props: ArticlesDetailsPageProps) => {
 		[dispatch],
 	);
 
-	const onBackToList = useCallback(() => {
-		navigate(RoutePath.articles);
-	}, [navigate]);
-
 	if (!id) {
 		return <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>{t('Id not found!')}</Page>;
 	}
@@ -75,7 +69,7 @@ const ArticlesDetailsPage = (props: ArticlesDetailsPageProps) => {
 	return (
 		<DynamicModuleLoader removeAfterUnmount reducers={reducers}>
 			<Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-				<Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+				<ArticlesDetailsPageHeader />
 				<ArticleDetails id={id!} />
 				<Text className={cls.commentTitle} title={t('Рекомендуем')} size={TextSize.L} />
 				<ArticleList
