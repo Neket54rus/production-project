@@ -11,6 +11,7 @@ import { ButtonSize } from 'shared/ui/Button/ui/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -56,9 +57,9 @@ export const Sidebar = memo((props: SidebarProps) => {
 			>
 				{collapsed ? '>' : '<'}
 			</Button>
-			<div className={cls.items}>
+			<VStack className={cls.items} gap="8">
 				{itemsList}
-			</div>
+			</VStack>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
 				<LangSwitcher short={collapsed} />
