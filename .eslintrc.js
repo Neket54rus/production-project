@@ -3,7 +3,7 @@ module.exports = {
 	extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: { ecmaFeatures: { jsx: true }, ecmaVersion: 'latest', sourceType: 'module' },
-	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'neket54-plugin'],
 	rules: {
 		indent: ['error', 'tab'],
 		'linebreak-style': 'off',
@@ -38,6 +38,7 @@ module.exports = {
 		'object-curly-newline': 'off',
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['warn'],
+		'neket54-plugin/path-checker': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,
