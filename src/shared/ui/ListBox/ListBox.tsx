@@ -2,10 +2,11 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DropdownDirection } from 'shared/types/ui';
 
 import { Button } from '../Button';
-
 import { HStack } from '../Stack';
+
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItems {
@@ -13,8 +14,6 @@ export interface ListBoxItems {
 	content: ReactNode
 	disabled?: boolean
 }
-
-type DropdownDirection = 'top' | 'bottom'
 
 interface ListBoxProps {
 	items?: ListBoxItems[]
@@ -28,9 +27,9 @@ interface ListBoxProps {
 }
 
 export const ListBox = (props: ListBoxProps) => {
-	const { items, className, value, defaultValue, onChange, readonly, direction = 'bottom', label } = props;
+	const { items, className, value, defaultValue, onChange, readonly, direction = 'bottom left', label } = props;
 
-	const optionsClasses = [cls[direction]];
+	const optionsClasses = [cls[direction.replace(/ /g, '-')]];
 
 	return (
 		<HStack align="center" gap="4">
