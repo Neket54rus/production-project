@@ -1,16 +1,17 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+import { ValidateProfileError } from 'entities/Profile';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+
 import { updateProfileData } from './updateProfileData';
-import { ValidateProfileError } from '../../types/profile';
 
 const data = {
 	username: 'admin',
 	age: 22,
 	country: Country.Russia,
-	lastname: 'Lastname',
-	first: 'Firstname',
-	city: 'Moskow',
+	lastName: 'LastName',
+	first: 'FirstName',
+	city: 'Moscow',
 	currency: Currency.RUB,
 	id: '1',
 };
@@ -50,7 +51,7 @@ describe('updateProfileData', () => {
 	test('validate error', async () => {
 		const thunk = new TestAsyncThunk(updateProfileData, {
 			profile: {
-				form: { ...data, lastname: '' },
+				form: { ...data, lastName: '' },
 			},
 		});
 

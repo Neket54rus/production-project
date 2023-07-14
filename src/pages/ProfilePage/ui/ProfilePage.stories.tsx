@@ -1,12 +1,12 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { Theme } from 'app/providers/ThemeProvider';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import {
 	ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
 // import Avatar from 'shared/assets/test/avatarImg.jpg';
 import ProfilePage from './ProfilePage';
 
@@ -26,9 +26,9 @@ Light.decorators = [StoreDecorator({
 			username: 'admin',
 			age: 22,
 			country: Country.Russia,
-			lastname: 'Lastname',
-			first: 'Firstname',
-			city: 'Moskow',
+			lastName: 'LastName',
+			first: 'FirstName',
+			city: 'Moscow',
 			currency: Currency.RUB,
 		},
 	},
@@ -42,9 +42,9 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
 			username: 'admin',
 			age: 22,
 			country: Country.Russia,
-			lastname: 'Lastname',
-			first: 'Firstname',
-			city: 'Moskow',
+			lastName: 'LastName',
+			first: 'FirstName',
+			city: 'Moscow',
 			currency: Currency.RUB,
 		},
 	},

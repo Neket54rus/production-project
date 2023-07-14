@@ -20,8 +20,8 @@ interface ProfileCardProps {
 	isLoading?: boolean
 	error?: string
 	readonly?: boolean
-	onChangeFirstname?: (value?: string) => void
-	onChangeLastname?: (value?: string) => void
+	onChangeFirstName?: (value?: string) => void
+	onChangeLastName?: (value?: string) => void
 	onChangeCity?: (value?: string) => void
 	onChangeAge?: (value?: string) => void
 	onChangeUsername?: (value?: string) => void
@@ -36,8 +36,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 		data,
 		isLoading,
 		error,
-		onChangeFirstname,
-		onChangeLastname,
+		onChangeFirstName,
+		onChangeLastName,
 		readonly,
 		onChangeAge,
 		onChangeCity,
@@ -81,14 +81,14 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 				className={cls.input}
 				value={data?.first}
 				placeholder={t('Имя')}
-				onChange={onChangeFirstname}
+				onChange={onChangeFirstName}
 				readonly={readonly}
 			/>
 			<Input
 				className={cls.input}
-				value={data?.lastname}
+				value={data?.lastName}
 				placeholder={t('Фамилия')}
-				onChange={onChangeLastname}
+				onChange={onChangeLastName}
 				readonly={readonly}
 			/>
 			<Input
