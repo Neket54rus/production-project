@@ -1,54 +1,54 @@
 .Dropdown {
-	position: relative;
+    position: relative;
 }
 
 .btn {
-	background: none;
-	outline: none;
-	margin: 0;
-	padding: 0;
-	border: none;
-	cursor: pointer;
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
 }
 
 .menu {
-	position: absolute;
-	background: var(--card-bg);
-	z-index: 10000;
-	border-radius: 8px;
-	border: 1px solid var(--primary-color);
+    position: absolute;
+    background: var(--card-bg);
+    z-index: 10000;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
 
-	&.top-left {
-		bottom: 100%;
-		right: 0;
-	}
+    &.top-left {
+        bottom: 100%;
+        right: 0;
+    }
 
-	&.top-right {
-		bottom: 100%;
-		left: 0;
-	}
+    &.top-right {
+        bottom: 100%;
+        left: 0;
+    }
 
-	&.bottom-left {
-		top: 100%;
-		right: 0;
-	}
+    &.bottom-left {
+        top: 100%;
+        right: 0;
+    }
 
-	&.bottom-right {
-		top: 100%;
-		left: 0;
-	}
+    &.bottom-right {
+        top: 100%;
+        left: 0;
+    }
 }
 
 .item {
-	padding: 10px 20px;
-	width: 100%;
-	border: none;
-	background: none;
-	outline: none;
-	color: var(--primary-color);
-	cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
 
-	&.active {
-		background: var(--inverted-primary-color);
-	}
+    &.active {
+        background: var(--inverted-primary-color);
+    }
 }

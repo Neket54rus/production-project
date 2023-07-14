@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import { getProfileData } from './getProfileData';
 
 describe('getLoginError', () => {
@@ -9,9 +9,9 @@ describe('getLoginError', () => {
 			username: 'admin',
 			age: 22,
 			country: Country.Russia,
-			lastname: 'Lastname',
-			first: 'Firstname',
-			city: 'Moskow',
+			lastName: 'LastName',
+			first: 'FirstName',
+			city: 'Moscow',
 			currency: Currency.RUB,
 
 		};

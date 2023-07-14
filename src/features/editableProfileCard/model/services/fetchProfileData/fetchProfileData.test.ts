@@ -10,9 +10,9 @@ describe('fetchProfileData', () => {
 			username: 'admin',
 			age: 22,
 			country: Country.Russia,
-			lastname: 'Lastname',
-			first: 'Firstname',
-			city: 'Moskow',
+			lastName: 'LastName',
+			first: 'FirstName',
+			city: 'Moscow',
 			currency: Currency.RUB,
 		};
 
