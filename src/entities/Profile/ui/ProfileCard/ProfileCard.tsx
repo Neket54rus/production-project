@@ -83,6 +83,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 				placeholder={t('Имя')}
 				onChange={onChangeFirstName}
 				readonly={readonly}
+				data-testid="ProfileCard.firstName"
 			/>
 			<Input
 				className={cls.input}
@@ -90,6 +91,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 				placeholder={t('Фамилия')}
 				onChange={onChangeLastName}
 				readonly={readonly}
+				data-testid="ProfileCard.lastName"
 			/>
 			<Input
 				className={cls.input}
