@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -9,6 +9,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 
+import { Spinner } from 'shared/ui/Spinner';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
@@ -20,7 +21,7 @@ import cls from './ArticlesDetailsComments.module.scss';
 
 interface ArticlesDetailsCommentsProps {
 	className?: string
-	id: string
+	id?: string
 }
 
 export const ArticlesDetailsComments = memo((props: ArticlesDetailsCommentsProps) => {
@@ -49,7 +50,9 @@ export const ArticlesDetailsComments = memo((props: ArticlesDetailsCommentsProps
 	return (
 		<div className={classNames('', {}, [className])}>
 			<Text className={cls.commentTitle} title={t('Комментарии')} size={TextSize.L} />
-			<AddCommentForm onSendComment={onSendComment} />
+			<Suspense fallback={<Spinner />}>
+				<AddCommentForm onSendComment={onSendComment} />
+			</Suspense>
 			<CommentList comments={comments} isLoading={isLoading} />
 		</div>
 	);
