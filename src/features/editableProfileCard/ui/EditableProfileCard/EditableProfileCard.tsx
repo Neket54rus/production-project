@@ -4,10 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import {
-	ProfileCard,
-	ValidateProfileError,
-} from 'entities/Profile';
+import { ProfileCard } from 'entities/Profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -15,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 import {
+	ValidateProfileError,
 	fetchProfileData,
 	getProfileError,
 	getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer,
