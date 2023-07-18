@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Page } from 'widgets/Page/Page';
@@ -12,9 +13,11 @@ export const ForbiddenPage = memo((props: ForbiddenPageProps) => {
 		className,
 	} = props;
 
+	const { t } = useTranslation();
+
 	return (
 		<Page className={classNames('', {}, [className])}>
-			Forbidden page
+			{t('Forbidden page')}
 		</Page>
 	);
 });
