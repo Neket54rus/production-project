@@ -1,9 +1,11 @@
 import {
-	FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
+	FC,
+	MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
+import { Overlay } from '../../Overlay/Overlay';
 import { Portal } from '../../Portal';
 
 import cls from './Modal.module.scss';
@@ -40,10 +42,6 @@ export const Modal: FC<ModalProps> = (props) => {
 			}, ANIMATION_DELAY);
 		}
 	}, [onClose]);
-
-	const onContentClick = (event: MouseEvent<HTMLDivElement>) => {
-		event.stopPropagation();
-	};
 
 	const onKeyDown = useCallback((event: KeyboardEvent) => {
 		if (event.key === 'Escape') {
@@ -82,13 +80,12 @@ export const Modal: FC<ModalProps> = (props) => {
 			<div className={classNames(
 				cls.Modal,
 				mods,
-				[className],
+				[className, 'app_modal'],
 			)}
 			>
-				<div className={cls.overlay} onClick={closeHandler}>
-					<div className={cls.content} onClick={onContentClick}>
-						{children}
-					</div>
+				<Overlay onClick={closeHandler} />
+				<div className={cls.content}>
+					{children}
 				</div>
 			</div>
 		</Portal>
