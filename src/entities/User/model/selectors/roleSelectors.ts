@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 import { UserRole } from '../types/user';
 

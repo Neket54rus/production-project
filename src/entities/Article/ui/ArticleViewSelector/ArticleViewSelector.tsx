@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import ListIcon from 'shared/assets/icons/list-icon.svg';
-import TiledIcon from 'shared/assets/icons/tiled-icon.svg';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import ListIcon from '@/shared/assets/icons/list-icon.svg';
+import TiledIcon from '@/shared/assets/icons/tiled-icon.svg';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
 
 import { ArticleView } from '../../model/types/article';
 

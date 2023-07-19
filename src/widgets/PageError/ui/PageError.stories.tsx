@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
 import {
 	ThemeDecorator,
-} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { PageError } from './PageError';
 
 export default {
