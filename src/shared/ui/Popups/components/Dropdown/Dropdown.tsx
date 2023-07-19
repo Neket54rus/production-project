@@ -4,9 +4,11 @@ import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
-import { AppLink } from '../AppLink';
-import { VStack } from '../Stack';
+import { AppLink } from '../../../AppLink';
+import { VStack } from '../../../Stack';
+import { optionsClasses } from '../../styles/consts';
 
+import popupCls from '../../styles/popup.module.scss';
 import cls from './Dropdown.module.scss';
 
 export interface DropdownItem {
@@ -26,22 +28,20 @@ interface DropdownProps {
 export const Dropdown = (props: DropdownProps) => {
 	const { className, trigger, items, direction = 'bottom left' } = props;
 
-	const optionsClasses = [cls[direction.replace(/ /g, '-')]];
-
 	return (
 		<Menu
-			className={classNames(cls.Dropdown, {}, [className])}
+			className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
 			as="div"
 		>
 			<Menu.Button className={cls.btn}>
 				{trigger && trigger}
 			</Menu.Button>
-			<Menu.Items className={classNames(cls.menu, {}, optionsClasses)}>
+			<Menu.Items className={classNames(cls.menu, {}, optionsClasses(direction))}>
 				<VStack>
 					{items.map((item) => {
 						const content = ({ active }: {active: boolean}) => (
 							<button
-								className={classNames(cls.item, { [cls.active]: active })}
+								className={classNames(cls.item, { [popupCls.active]: active })}
 								onClick={item.onClick}
 								type="button"
 								disabled={item.disabled}

@@ -31,7 +31,7 @@ export function buildBabelLoader(props: BuildBabelLoaderProps) {
 							props: ['data-testid'],
 						},
 					],
-				],
+				].filter(Boolean),
 			},
 		},
 	};
