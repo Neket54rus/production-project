@@ -6,6 +6,7 @@ import { DropdownDirection } from '@/shared/types/ui';
 
 import { optionsClasses } from '../../styles/consts';
 import popoverCls from '../../styles/popup.module.scss';
+
 import cls from './Popover.module.scss';
 
 interface PopoverProps {
@@ -25,7 +26,7 @@ export function Popover(props: PopoverProps) {
 
 	return (
 		<HPopover className={classNames(cls.Popover, {}, [className, popoverCls.popup])}>
-			<HPopover.Button className={popoverCls.btn}>
+			<HPopover.Button className={popoverCls.btn} as="div">
 				{trigger}
 			</HPopover.Button>
 			<HPopover.Panel className={classNames(cls.menu, {}, optionsClasses(direction))}>
