@@ -1,4 +1,4 @@
-import { memo, type FC } from 'react';
+import { memo } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 
 import { classNames } from '@/shared/lib/classNames/classNames';

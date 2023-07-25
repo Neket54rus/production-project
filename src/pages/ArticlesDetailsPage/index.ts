@@ -1,3 +1,4 @@
+export { articleDetailsPageReducer } from './model/slice';
 export { ArticlesDetailsPageAsync as ArticlesDetailsPage } from './ui/ArticlesDetailsPage/ArticlesDetailsPage.async';
 
 export type { ArticleDetailsCommentSchema } from './model/types/ArticleDetailsCommentSchema';

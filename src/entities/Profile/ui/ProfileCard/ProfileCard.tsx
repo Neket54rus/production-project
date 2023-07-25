@@ -8,7 +8,7 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Input } from '@/shared/ui/Input/Input';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
-import { PageLoader } from '@/widgets/PageLoader/ui/PageLoader';
+import { PageLoader } from '@/widgets/PageLoader';
 
 import { Profile } from '../../model/types/profile';
 

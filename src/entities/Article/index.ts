@@ -1,7 +1,6 @@
 export { getArticleDetailsData } from './model/selectors/articleDetails';
-export {
-	ArticleSortField, ArticleType, ArticleView,
-} from './model/types/article';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { ArticleBlockType, ArticleSortField, ArticleType, ArticleView } from './model/types/article';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';

@@ -9,7 +9,7 @@ export type ReducersList = {
 	[name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
-type ReducersListEntry = [StateSchemaKey, Reducer]
+// type ReducersListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
 	reducers: ReducersList
