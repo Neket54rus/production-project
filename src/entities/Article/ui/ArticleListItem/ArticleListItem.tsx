@@ -5,11 +5,11 @@ import EyeIcon from '@/shared/assets/icons/eye-icon.svg';
 import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { Card } from '@/shared/ui/Card/Card';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Text } from '@/shared/ui/Text/Text';
+import { Card } from '@/shared/ui/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Text } from '@/shared/ui/Text';
 
 import {
 	Article, ArticleBlockType, ArticleTextBlock, ArticleView,
