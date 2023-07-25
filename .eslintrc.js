@@ -52,7 +52,7 @@ module.exports = {
 		'object-curly-newline': 'off',
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['warn'],
-		'neket54-plugin/path-checker': 'error',
+		'neket54-plugin/path-checker': ['error', { alias: '@' }],
 		'react/jsx-props-no-spreading': 'off',
 	},
 	globals: {
