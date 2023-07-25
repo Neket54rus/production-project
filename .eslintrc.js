@@ -53,7 +53,17 @@ module.exports = {
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars': ['warn'],
 		'neket54-plugin/path-checker': ['error', { alias: '@' }],
-		'neket54-plugin/public-api-imports': ['error', { alias: '@' }],
+		'neket54-plugin/public-api-imports': [
+			'error',
+			{
+				alias: '@',
+				testFilesPatterns: [
+					'**/*.test.*',
+					'**/StoreDecorator.tsx',
+					'**/*.story.*',
+				],
+			},
+		],
 		'react/jsx-props-no-spreading': 'off',
 	},
 	globals: {
