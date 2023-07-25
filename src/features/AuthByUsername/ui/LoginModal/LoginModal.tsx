@@ -2,7 +2,7 @@ import { FC, Suspense } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Modal } from '@/shared/ui/Modal';
-import { PageLoader } from '@/widgets/PageLoader';
+import { Spinner } from '@/shared/ui/Spinner';
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
@@ -30,7 +30,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
 			onClose={onClose}
 			lazy
 		>
-			<Suspense fallback={<PageLoader />}>
+			<Suspense fallback={<Spinner />}>
 				<LoginFormAsync onSuccess={onClose} />
 			</Suspense>
 		</Modal>

@@ -6,9 +6,9 @@ import { Currency, CurrencySelect } from '@/entities/Currency';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Input } from '@/shared/ui/Input/Input';
+import { Spinner } from '@/shared/ui/Spinner';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
-import { PageLoader } from '@/widgets/PageLoader';
 
 import { Profile } from '../../model/types/profile';
 
@@ -52,7 +52,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 	if (isLoading) {
 		return (
 			<div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
-				<PageLoader />
+				<Spinner />
 			</div>
 		);
 	}

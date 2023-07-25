@@ -64,6 +64,13 @@ module.exports = {
 				],
 			},
 		],
+		'neket54-plugin/layer-imports': [
+			'error',
+			{
+				alias: '@',
+				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+			},
+		],
 		'react/jsx-props-no-spreading': 'off',
 	},
 	globals: {
