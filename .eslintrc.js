@@ -3,8 +3,9 @@ module.exports = {
 	extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: { ecmaFeatures: { jsx: true }, ecmaVersion: 'latest', sourceType: 'module' },
-	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'neket54-plugin'],
+	plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'neket54-plugin', 'unused-imports'],
 	rules: {
+		'unused-imports/no-unused-imports': 'error',
 		indent: ['error', 'tab'],
 		'linebreak-style': 'off',
 		'no-tabs': 'off',
