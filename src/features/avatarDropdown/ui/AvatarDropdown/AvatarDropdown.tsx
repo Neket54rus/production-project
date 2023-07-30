@@ -34,7 +34,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 	return (
 		<Dropdown
 			className={classNames('', {}, [className])}
-			trigger={<Avatar size={30} src={userAuthData.avatar} />}
+			trigger={<Avatar size={30} src={userAuthData.avatar} fallbackInverted />}
 			items={[
 				...(isAdmin ? [{ content: t('Админка'), href: getRouteAdminPanel() }] : []),
 				{ content: t('Профиль'), href: getRouteProfile(userAuthData.id) },
