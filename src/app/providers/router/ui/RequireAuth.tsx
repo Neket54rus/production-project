@@ -21,8 +21,9 @@ export const RequireAuth = (props: RequireAuthProps) => {
 	const userRole = useSelector(getUserRoles);
 
 	const hasRequiredRole = useMemo(() => {
+		console.log(role);
 		if (!role) {
-			return true;
+			return false;
 		}
 
 		return role.some((reqRole) => {
